@@ -1,0 +1,9 @@
+<h3>Sign In</h3>
+<p>Enter your username to proceed</p>
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()" autocomplete="off">
+    <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+    <button type="submit" mat-flat-button color="primary" [disabled]="!signInForm.valid">Sign In</button>
+</form>
+
