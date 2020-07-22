@@ -1,0 +1,10 @@
+@import "theme";
+
+header {
+    display: flex;
+    padding: 10px 20px;
+    background-color: $primary;
+    color: $accent;
+    height: 50px;
+    align-items: center;
+}

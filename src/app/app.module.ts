@@ -7,6 +7,10 @@ import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './core/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { SignInEffects } from './core/store/effects';
+
+const EFFECTS = [SignInEffects];
 
 @NgModule({
     declarations: [
@@ -22,6 +26,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
                 strictActionImmutability: true
             }
         }),
+        EffectsModule.forRoot(EFFECTS),
         StoreDevtoolsModule.instrument({
             maxAge: 25
         }),

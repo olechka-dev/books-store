@@ -1,23 +1,25 @@
 import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
+import { SignInGuard } from './main/sign-in.guard';
 
 const routes: Routes = [
     {
         path: '',
-        redirectTo: 'welcome', //TODO change to 'search' when search is implemented, and add route guard
+        redirectTo: 'main',
         pathMatch: 'full'
     },
     {
         path: 'welcome',
         loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule)
     },
-    // TODO {
-    //   path: 'search',
-    //   loadChildren: () => import('@realiecho/main/main.module').then(m => m.MainModule)
-    // },
+    {
+        path: 'main',
+        loadChildren: () => import('./main/main.module').then(m => m.MainModule),
+        canActivate: [SignInGuard]
+    },
     {
         path: '**',
-        redirectTo: 'welcome', // TODO 'search',
+        redirectTo: 'main',
         pathMatch: 'full'
     },
 
