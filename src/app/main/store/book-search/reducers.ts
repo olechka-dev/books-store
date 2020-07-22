@@ -14,6 +14,14 @@ const reducer = createReducer(searchInitialState,
     on(searchBooksSuccess, (state, { payload }) => ({...payload, items: adapter.addAll(payload.items, state.items)}))
 );
 
-export function searchReducer(state: SearchState | null, action: Action) {
+export function searchReducer(state: SearchState, action: Action) {
     return reducer(state, action);
 }
+
+const {
+    selectEntities,
+    selectAll
+} = adapter.getSelectors();
+
+export const selectSearchEntities = selectEntities;
+export const selectSearchAll = selectAll;

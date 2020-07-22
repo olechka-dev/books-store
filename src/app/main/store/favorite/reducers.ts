@@ -16,3 +16,13 @@ const reducer = createReducer(favoriteInitialState,
 export function favoriteReducer(state: EntityState<BookInfo> | null, action: Action) {
     return reducer(state, action);
 }
+
+
+const {
+    selectIds,
+    selectEntities,
+    selectAll
+} = favoriteAdapter.getSelectors();
+
+export const selectFavoriteIds = selectIds;
+export const selectFavoriteAll = selectAll;

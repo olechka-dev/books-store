@@ -4,8 +4,8 @@ import { Observable, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { BookInfo, SearchState } from '../../../core/types/book-search.types';
 import { select, Store } from '@ngrx/store';
-import { searchBooks } from '../store/actions';
-import { selectBooksList } from '../store';
+import { MainState, selectBooksList } from '../../store';
+import { searchBooks } from '../../store/book-search/actions';
 
 @Component({
     selector: 'app-search',
@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
     private componentDestroy$ = new Subject();
 
-    constructor(private store: Store<SearchState>) {
+    constructor(private store: Store<MainState>) {
     }
 
     ngOnInit() {

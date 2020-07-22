@@ -2,11 +2,10 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { BookInfo } from '../../core/types/book-search.types';
 import { select, Store } from '@ngrx/store';
-import { EntityState } from '@ngrx/entity';
-import { addFavorite, removeFavorite } from '../../main/favorite/store/actions';
-import { Observable, Subject } from 'rxjs';
-import { selectIsFavorite } from '../../main/favorite/store';
+import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { addFavorite, removeFavorite } from '../../main/store/favorite/actions';
+import { MainState, selectIsFavorite } from '../../main/store';
 
 @Component({
     selector: 'app-book-details',
@@ -18,7 +17,7 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
     isFavorite = false;
     private componentDestroy$ = new Subject();
 
-    constructor(@Inject(MAT_DIALOG_DATA) public data: BookInfo, private store: Store<EntityState<BookInfo>>) {
+    constructor(@Inject(MAT_DIALOG_DATA) public data: BookInfo, private store: Store<MainState>) {
     }
 
     ngOnInit() {
