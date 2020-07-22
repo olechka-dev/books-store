@@ -1,0 +1,4 @@
+<mat-form-field>
+    <input matInput placeholder="Search..." [formControl]="search" autocomplete="off">
+</mat-form-field>
+<app-search-results [books]="books | async"></app-search-results>

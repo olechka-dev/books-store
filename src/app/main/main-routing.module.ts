@@ -1,6 +1,5 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BooksSearchComponent } from './books-search/books-search.component';
 import { MainContainerComponent } from './main-container/main-container.component';
 
 
@@ -16,7 +15,7 @@ const routes: Routes = [
             },
             {
                 path: 'search',
-                component: BooksSearchComponent
+                loadChildren: () => import('./book-search/book-search.module').then(m => m.BookSearchModule),
             }
         ]
     }

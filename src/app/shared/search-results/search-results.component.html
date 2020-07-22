@@ -1,0 +1,6 @@
+<div class="container">
+    <div *ngFor="let book of books" (click)="openDetails(book)">
+        <div class="book-image" [ngStyle]="{ 'background-image': 'url(' + book.volumeInfo?.imageLinks?.thumbnail + ')' }"></div>
+        <div>{{book.volumeInfo?.title}}</div>
+    </div>
+</div>

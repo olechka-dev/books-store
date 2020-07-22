@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+
+    .book-image {
+        position: relative;
+        height: 210px;
+        width: 125px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+    }
+    .details {
+        flex: 1;
+    }
+}

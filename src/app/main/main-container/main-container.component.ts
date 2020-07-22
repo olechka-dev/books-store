@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState } from '../../core/store';
+import { AppState, selectUserState } from '../../core/store';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectUserState } from '../../core/store/selectors';
 
 @Component({
     selector: 'app-main-container',
