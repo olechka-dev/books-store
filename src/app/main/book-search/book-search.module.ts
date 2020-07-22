@@ -14,8 +14,8 @@ import { SharedModule } from '../../shared/shared.module';
     imports: [
         CommonModule,
         searchRouter,
-        MatInputModule,
         SharedModule,
+        MatInputModule,
         MatFormFieldModule,
         ReactiveFormsModule
     ]

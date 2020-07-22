@@ -5,7 +5,7 @@ import { debounceTime, filter, takeUntil } from 'rxjs/operators';
 import { BookInfo, SearchState } from '../../../core/types/book-search.types';
 import { select, Store } from '@ngrx/store';
 import { MainState, selectBooksList } from '../../store';
-import { searchBooks } from '../../store/book-search/actions';
+import { resetSearchResults, searchBooks } from '../../store/book-search/actions';
 
 @Component({
     selector: 'app-search',
@@ -43,6 +43,7 @@ export class SearchComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
+        this.store.dispatch(resetSearchResults());
         this.componentDestroy$.next();
         this.componentDestroy$.unsubscribe();
     }

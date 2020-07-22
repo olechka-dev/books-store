@@ -1,1 +1,4 @@
-<p>favorite-list works!</p>
+<div>
+    <a [routerLink]="'/main/search'">Search Books</a>
+</div>
+<app-search-results [books]="favoriteList | async"></app-search-results>

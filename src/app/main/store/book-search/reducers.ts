@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { searchBooksSuccess } from './actions';
+import { resetSearchResults, searchBooksSuccess } from './actions';
 import { createEntityAdapter } from '@ngrx/entity';
 import { BookInfo, SearchState } from '../../../core/types/book-search.types';
 
@@ -11,7 +11,8 @@ export const searchInitialState: SearchState = {
 };
 
 const reducer = createReducer(searchInitialState,
-    on(searchBooksSuccess, (state, { payload }) => ({...payload, items: adapter.addAll(payload.items, state.items)}))
+    on(searchBooksSuccess, (state, { payload }) => ({...payload, items: adapter.addAll(payload.items, state.items)})),
+    on(resetSearchResults, () => ({...searchInitialState}))
 );
 
 export function searchReducer(state: SearchState, action: Action) {
