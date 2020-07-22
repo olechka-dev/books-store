@@ -16,6 +16,10 @@ const routes: Routes = [
             {
                 path: 'search',
                 loadChildren: () => import('./book-search/book-search.module').then(m => m.BookSearchModule),
+            },
+            {
+                path: 'wishlist',
+                loadChildren: () => import('./favorite/favorite.module').then(m => m.FavoriteModule),
             }
         ]
     }

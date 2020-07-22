@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, filter, takeUntil } from 'rxjs/operators';
-import { BookInfo, SearchResults } from '../../../core/types/book-search.types';
+import { BookInfo, SearchState } from '../../../core/types/book-search.types';
 import { select, Store } from '@ngrx/store';
 import { searchBooks } from '../store/actions';
 import { selectBooksList } from '../store';
@@ -19,7 +19,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
     private componentDestroy$ = new Subject();
 
-    constructor(private store: Store<SearchResults>) {
+    constructor(private store: Store<SearchState>) {
     }
 
     ngOnInit() {

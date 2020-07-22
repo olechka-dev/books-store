@@ -1,4 +1,8 @@
-<div class="book-image" [ngStyle]="{ 'background-image': 'url(' + data.volumeInfo?.imageLinks?.thumbnail + ')' }"></div>
+<div class="image-container">
+    <div class="book-image"
+         [ngStyle]="{ 'background-image': 'url(' + data.volumeInfo?.imageLinks?.thumbnail + ')' }"></div>
+    <mat-icon class="icon" (click)="addToWishlist()">{{ isFavorite ? 'favorite' : 'favorite_border'}}</mat-icon>
+</div>
 <div class="details">
     <div>{{data.volumeInfo?.title}}</div>
     <div>{{data.volumeInfo?.subtitle}}</div>
