@@ -1,8 +1,9 @@
 .search-header {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: space-between;
-    height: 65px;
+    height: 110px;
 
     .search-field {
         width: 300px;
@@ -10,5 +11,9 @@
 
     a {
         font-size: 26px;
+    }
+    @media (min-width: 520px) {
+        flex-direction: row;
+        height: 65px;
     }
 }
