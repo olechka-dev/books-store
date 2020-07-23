@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { BookInfo } from '../../core/types/book-search.types';
 import { select, Store } from '@ngrx/store';
@@ -10,7 +10,8 @@ import { MainState, selectIsFavorite } from '../../main/store';
 @Component({
     selector: 'app-book-details',
     templateUrl: './book-details.component.html',
-    styleUrls: ['./book-details.component.scss']
+    styleUrls: ['./book-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookDetailsComponent implements OnInit, OnDestroy {
 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { BookInfo } from '../../core/types/book-search.types';
 import { MatDialog } from '@angular/material';
 import { BookDetailsComponent } from '../book-details/book-details.component';
@@ -6,7 +6,8 @@ import { BookDetailsComponent } from '../book-details/book-details.component';
 @Component({
     selector: 'app-search-results',
     templateUrl: './search-results.component.html',
-    styleUrls: ['./search-results.component.scss']
+    styleUrls: ['./search-results.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchResultsComponent implements OnInit {
 
