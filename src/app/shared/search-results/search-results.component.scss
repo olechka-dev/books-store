@@ -1,12 +1,17 @@
+@import "theme";
 .container {
     display: grid;
     margin-top: 30px;
-    grid-template-columns: repeat(auto-fit, 230px);
+    grid-template-columns: repeat(auto-fit, 240px);
     grid-template-rows: 290px;
     grid-auto-rows: 290px;
-    column-gap: 50px;
-    row-gap: 50px;
+    column-gap: 30px;
+    row-gap: 20px;
     justify-content: center;
+
+    div {
+        overflow: hidden;
+    }
 
     .book-image {
         margin: auto;
@@ -16,6 +21,12 @@
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 15px;
+        border: 1px solid $accent;
+    }
+
+    .title {
+        text-align: center;
+        padding-top: 15px;
     }
 }
 .placeholder-image {

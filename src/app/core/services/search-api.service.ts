@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { SearchResults } from '../types/book-search.types';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -18,6 +19,13 @@ export class SearchApiService {
             maxResults: '20',
             projection: 'lite'
         };
-        return this.http.get<SearchResults>(environment.searchApiUrl, {params});
+        return this.http.get<SearchResults>(environment.searchApiUrl, {params})
+            .pipe(
+                tap((res: SearchResults) => {
+                    if (!Array.isArray(res.items)) {
+                        throw new Error('no items array');
+                    }
+                })
+            );
     }
 }

@@ -10,11 +10,14 @@ export class SearchEffects {
         return this.actions$
             .pipe(
                 ofType(SearchActions.SEARCH),
-                switchMap((action: {payload: string}) => {
-                    return this.searchApi.getBooksList(action.payload);
+                switchMap((action: { payload: string }) => {
+                    return this.searchApi.getBooksList(action.payload)
+                        .pipe(
+                            map((res) => searchBooksSuccess({ payload: res })),
+                            catchError((err) => [searchBooksFailed(err)])
+                        );
                 }),
-                map((res) => searchBooksSuccess({payload: res})),
-                catchError((err) => [searchBooksFailed(err)])
+
             );
     });
 
