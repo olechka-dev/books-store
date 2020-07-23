@@ -14,9 +14,9 @@ const getFromLocalStorage = (key: string) => {
 
 const key = 'favorite';
 
-export function favoriteMetaReducer(reducer: ActionReducer<any>) {
+export const favoriteMetaReducer = (reducer: ActionReducer<any>) => {
     let isOnLoad = true;
-    return function (state, action) {
+    return function(state, action) {
         const nextState = reducer(state, action);
         if (isOnLoad) {
             isOnLoad = false;
@@ -30,4 +30,4 @@ export function favoriteMetaReducer(reducer: ActionReducer<any>) {
         saveToLocalStorage(nextState[key], key);
         return nextState;
     };
-}
+};

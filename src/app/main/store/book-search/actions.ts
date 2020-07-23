@@ -10,5 +10,5 @@ export enum SearchActions {
 
 export const searchBooks = createAction(SearchActions.SEARCH, props<{ payload: string }>());
 export const searchBooksSuccess = createAction(SearchActions.SEARCH_SUCCESS, props<{ payload: SearchResults }>());
-export const searchBooksFailed = createAction(SearchActions.SEARCH_FAILED, props<{ payload: any }>()); //TODO something with it
+export const searchBooksFailed = createAction(SearchActions.SEARCH_FAILED, props<{ payload: any }>());
 export const resetSearchResults = createAction(SearchActions.SEARCH_RESET);

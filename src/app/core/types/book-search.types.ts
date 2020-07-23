@@ -2,7 +2,7 @@ import { EntityState } from '@ngrx/entity';
 
 export interface SearchResults {
     totalItems: number;
-    items: BookInfo[]
+    items: BookInfo[];
 }
 
 export interface BookInfo {
@@ -18,7 +18,7 @@ export interface VolumeInfo {
     imageLinks: {
         smallThumbnail: string;
         thumbnail: string;
-    }
+    };
 }
 
 export interface SearchState {

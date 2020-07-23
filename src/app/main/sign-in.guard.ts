@@ -23,7 +23,7 @@ export class SignInGuard implements CanActivate {
             take(1),
             map(user => !!user),
             tap((isSignedIn) => {
-                if(!isSignedIn) {
+                if (!isSignedIn) {
                     this.router.navigateByUrl('welcome');
                 }
             })

@@ -3,7 +3,7 @@ import { signInReducer } from './reducers';
 import { SignInEffects } from './effects';
 
 export interface AppState {
-    user: string
+    user: string;
 }
 
 export const reducers: ActionReducerMap<AppState> = {

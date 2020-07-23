@@ -7,8 +7,8 @@ import { SearchEffects } from './book-search/effects';
 import { favoriteMetaReducer } from './favorite/metareducers';
 
 export interface MainState {
-    search: SearchState,
-    favorite: EntityState<BookInfo>
+    search: SearchState;
+    favorite: EntityState<BookInfo>;
 }
 
 export const mainReducers: ActionReducerMap<MainState> = {

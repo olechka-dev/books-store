@@ -26,8 +26,7 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
             select(selectIsFavorite(this.data.id))
         ).subscribe((isFavorite) => {
             this.isFavorite = isFavorite;
-            console.log('is fav', this.isFavorite);
-        })
+        });
     }
 
     addToWishlist() {

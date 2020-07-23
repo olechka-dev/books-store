@@ -20,11 +20,10 @@ export class WelcomeScreenComponent implements OnInit {
     ngOnInit() {
         this.signInForm = this.fb.group({
             username: ['', Validators.required]
-        })
+        });
     }
 
     onSubmit() {
-        console.log('form', this.signInForm);
         const payload = this.signInForm.getRawValue().username;
         this.store.dispatch(userSignIn({payload}));
     }
