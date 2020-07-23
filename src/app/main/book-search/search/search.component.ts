@@ -29,13 +29,15 @@ export class SearchComponent implements OnInit, OnDestroy {
         this.search.valueChanges
             .pipe(
                 takeUntil(this.componentDestroy$),
-                debounceTime(300),
-                filter(val => !!val)
+                debounceTime(300)
             )
             .subscribe((val) => {
-            this.store.dispatch(searchBooks({payload: val}));
-
-        });
+                if (val && val.trim()) {
+                    this.store.dispatch(searchBooks({ payload: val.trim() }));
+                } else {
+                    this.store.dispatch(resetSearchResults());
+                }
+            });
 
         this.books = this.store
             .pipe(select(selectBooksList));

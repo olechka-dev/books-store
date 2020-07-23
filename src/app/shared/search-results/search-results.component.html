@@ -1,5 +1,5 @@
 <div class="container" *ngIf="books && books.length; else bookPlaceholder">
-        <div *ngFor="let book of books" (click)="openDetails(book)">
+        <div class="item" *ngFor="let book of books" (click)="openDetails(book)">
             <div class="book-image"
                  [ngStyle]="{ 'background-image': 'url(' + book.volumeInfo?.imageLinks?.thumbnail + ')' }"></div>
             <div class="title">{{book.volumeInfo?.title}}</div>

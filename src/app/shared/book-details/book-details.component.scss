@@ -3,6 +3,7 @@
 :host {
     display: flex;
     height: 100%;
+    overflow: hidden;
 
     .image-container {
         display: flex;
@@ -21,11 +22,36 @@
 
         .icon {
             cursor: pointer;
-            margin-top: 30px;
+            margin-top: 20px;
         }
     }
 
     .details {
         flex: 1;
+        margin-left: 30px;
+        height: 100%;
+        overflow: auto;
+        color: mat-color($books-app-accent, A700);
+
+        div {
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .description {
+            font-size: 14px;
+        }
+        .subtitle, .authors {
+            font-style: italic;
+        }
+        .authors, .title {
+            color: $primary
+        }
     }
 }

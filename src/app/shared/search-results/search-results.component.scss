@@ -3,8 +3,8 @@
     display: grid;
     margin-top: 30px;
     grid-template-columns: repeat(auto-fit, 240px);
-    grid-template-rows: 290px;
-    grid-auto-rows: 290px;
+    grid-template-rows: 300px;
+    grid-auto-rows: 300px;
     column-gap: 30px;
     row-gap: 20px;
     justify-content: center;
@@ -27,6 +27,9 @@
     .title {
         text-align: center;
         padding-top: 15px;
+        font-size: 14px;
+        line-height: 1.4;
+        color: mat-color($books-app-accent, A700);
     }
 }
 .placeholder-image {
