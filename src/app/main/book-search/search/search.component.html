@@ -1,7 +1,8 @@
-<mat-form-field>
-    <input matInput placeholder="Search..." [formControl]="search" autocomplete="off">
-</mat-form-field>
-<div>
+<div class="search-header">
+    <mat-form-field>
+        <input matInput placeholder="Search..." [formControl]="search" autocomplete="off">
+    </mat-form-field>
+
     <a [routerLink]="'/main/wishlist'">My Wishlist</a>
 </div>
 <app-search-results [books]="books | async"></app-search-results>

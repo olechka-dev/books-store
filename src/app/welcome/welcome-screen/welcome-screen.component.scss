@@ -1,0 +1,21 @@
+@import "theme";
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    color: $primary;
+
+    .form-input, .submit {
+        display: block;
+        width: 300px;
+    }
+
+    .form-input {
+        margin: 20px 0;
+    }
+    .submit {
+        height: 50px;
+    }
+}

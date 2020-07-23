@@ -33,7 +33,6 @@ export class SearchComponent implements OnInit, OnDestroy {
                 filter(val => !!val)
             )
             .subscribe((val) => {
-            console.log('val', val);
             this.store.dispatch(searchBooks({payload: val}));
 
         });

@@ -3,9 +3,9 @@
 @include mat-core();
 
 $books-app-primary: mat-palette($mat-deep-purple);
-$books-app-accent:  mat-palette($mat-grey, A200, A100, A400);
+$books-app-accent: mat-palette($mat-grey, A200, A100, A400);
 
-$books-app-warn:    mat-palette($mat-red);
+$books-app-warn: mat-palette($mat-pink);
 
 $books-app-theme: mat-light-theme($books-app-primary, $books-app-accent, $books-app-warn);
 

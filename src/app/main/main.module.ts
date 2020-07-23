@@ -5,7 +5,7 @@ import { mainRouter } from './main-routing.module';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { mainReducers, SEARCH_EFFECTS } from './store';
+import { mainMetaReducers, mainReducers, SEARCH_EFFECTS } from './store';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { mainReducers, SEARCH_EFFECTS } from './store';
         CommonModule,
         mainRouter,
         EffectsModule.forFeature(SEARCH_EFFECTS),
-        StoreModule.forFeature('mainData', mainReducers)
+        StoreModule.forFeature('mainData', mainReducers, { metaReducers: mainMetaReducers })
     ]
 })
 export class MainModule {
